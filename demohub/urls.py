@@ -3,6 +3,11 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from common import views as common_views  
+
+handler404 = common_views.error_404
+handler403 = common_views.error_403
+handler500 = common_views.error_500
 
 urlpatterns = [
     path('admin/', admin.site.urls),

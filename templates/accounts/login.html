@@ -9,8 +9,7 @@
 
     <!-- LEFT SECTION: Branding -->
     <div class="md:w-1/2 bg-[#208DCE] text-white flex flex-col justify-center items-center p-6">
-      <h1 class="text-xl font-bold text-center mb-4">Kumbuka Insights Foundation</h1>
-
+      <h1 class="text-xl font-bold text-center mb-4">DEMO HUB</h1>
       <div class="w-40 h-40 rounded-lg border-4 border-white shadow-sm bg-white flex items-center justify-center overflow-hidden p-4">
         <img src="{% static 'images/kih.png' %}" alt="Kumbuka Logo" class="max-w-full max-h-full object-contain" />
       </div>
@@ -22,14 +21,10 @@
         <h2 class="text-3xl font-semibold text-[#0F5391] mb-2">Login</h2>
         <p class="text-gray-600 mb-4 text-sm">Enter your credentials to access the system.</p>
 
+        {% include "partials/error_message.html" with message=form.non_field_errors|first %}
+
         <form method="POST" class="space-y-3">
           {% csrf_token %}
-
-          {% if form.non_field_errors %}
-          <div class="bg-red-100 text-red-700 p-2 rounded text-sm">
-            {{ form.non_field_errors }}
-          </div>
-          {% endif %}
 
           <!-- Username -->
           <div>
@@ -60,24 +55,17 @@
             {% endfor %}
           </div>
 
-          <!-- Forgot Password -->
-          <div class="flex justify-end text-xs">
-            <a href="#" class="text-[#208DCE] hover:underline">Forgot password?</a>
-          </div>
-
-          <!-- Submit -->
           <button type="submit" class="w-full bg-[#208DCE] text-white p-2.5 rounded text-sm hover:bg-[#0F5391] transition">
             Login
           </button>
         </form>
 
-        <!-- Footer -->
         <p class="text-xs text-gray-500 text-center mt-4">
-          &copy; {% now "Y" %} Kumbuka Insights System
+          &copy; {% now "Y" %} All rights reserved. Made with ❤️ by <a href="https://chatgpt.com" target="_blank" class="text-[#208DCE] hover:underline">Intersoft Hub</a>.
+          {% comment %} &copy; {% now "Y" %} All rights reserved. Made with ❤️ by <a href="gasperkayombo57@gmail.com" class="text-[#208DCE] hover:underline">Intersoft Hub</a>. {% endcomment %}
         </p>
       </div>
     </div>
-
   </div>
 </div>
 {% endblock %}
