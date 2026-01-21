@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block page_header %}
+Demo
+{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded shadow p-6 space-y-4">
+    {% if message %}
+    <div class="p-4 bg-blue-50 border border-blue-200 rounded text-blue-800">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    <p>Here is the list of Demo items accessible to you:</p>
+
+    <!-- Example: Demo item list -->
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-4 bg-white border rounded shadow hover:shadow-lg transition">
+            <h3 class="font-semibold text-[#0F5391]">Demo Item 1</h3>
+            <p class="text-sm text-gray-500">Short description of Demo Item 1.</p>
+        </div>
+        <div class="p-4 bg-white border rounded shadow hover:shadow-lg transition">
+            <h3 class="font-semibold text-[#0F5391]">Demo Item 2</h3>
+            <p class="text-sm text-gray-500">Short description of Demo Item 2.</p>
+        </div>
+        <div class="p-4 bg-white border rounded shadow hover:shadow-lg transition">
+            <h3 class="font-semibold text-[#0F5391]">Demo Item 3</h3>
+            <p class="text-sm text-gray-500">Short description of Demo Item 3.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
